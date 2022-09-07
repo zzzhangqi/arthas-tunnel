@@ -4,6 +4,6 @@ WORKDIR /app/arthas
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
     && apk add --no-cache wget \
-    && wget https://ghproxy.com/https://github.com/alibaba/arthas/releases/download/arthas-all-$VERSION/arthas-tunnel-server-$VERSION-fatjar.jar
+    && wget -O /app/arthas/arthas.jar https://ghproxy.com/https://github.com/alibaba/arthas/releases/download/arthas-all-$VERSION/arthas-tunnel-server-$VERSION-fatjar.jar
 
-ENTRYPOINT [ "java", "-jar", "/app/arthas/*.jar" ]
+ENTRYPOINT [ "java", "-jar", "/app/arthas/arthas.jar" ]
