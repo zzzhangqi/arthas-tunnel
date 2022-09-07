@@ -1,6 +1,5 @@
-ARG VERSION=3.6.6
 FROM openjdk:8-jdk-alpine
-
+ARG VERSION=3.6.6
 WORKDIR /app/arthas
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
